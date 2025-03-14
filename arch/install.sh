@@ -11,7 +11,7 @@ configure_dots() {
     cd yay || exit
     makepkg -si --noconfirm || exit
     cd .. && rm -rf yay || exit
-    yay -S neofetch skippy-xd cava ranger mpv rofi wezterm zsh feh xorg-xrandr neovim flameshot notify-osd discord chromium xclip pavucontrol ttf-roboto-mono-nerd thunar lxappearance fzf networkmanager exa bat github-cli zsh-autosuggestions zsh-syntax-highlighting meson ninja uthash libconfig nodejs npm python-pip libsixel imagemagick qt5-quickcontrols2-git qt5-graphicaleffects-git qt5-svg-git --noconfirm || exit
+    yay -S neofetch btop skippy-xd cava ranger mpv rofi wezterm zsh feh github-cli xorg-xrandr neovim flameshot notify-osd discord chromium xclip pavucontrol ttf-roboto-mono-nerd thunar lxappearance fzf networkmanager exa bat github-cli zsh-autosuggestions zsh-syntax-highlighting meson ninja uthash libconfig nodejs npm python-pip libsixel chafa imagemagick qt5-quickcontrols2-git qt5-graphicaleffects-git qt5-svg --noconfirm || exit
 
     if [ -e /etc/systemd/system/display-manager.service ]; then 
       default_target=$(basename $(readlink -f /etc/systemd/system/display-manager.service))
@@ -37,9 +37,9 @@ configure_dots() {
       rm -rf ./dotfiles
     fi
 
-    git clone https://github.com/carrotshniper21/dotfiles || exit
+    git clone https://github.com/eatmynerds/dotfiles || exit
 
-    cd dotfiles
+    cd dotfiles/arch
 
     chsh $USER -s /bin/zsh
     
@@ -56,7 +56,7 @@ configure_dots() {
     fi
 
     bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-    sudo cp $HOME/.local/bin/lvim /usr/bin || exit
+    sudo mv $HOME/.local/bin/lvim /usr/bin || exit
 
     echo "(3/8) Copying configuration files..."
     cp -r config/* $HOME/.config || exit
