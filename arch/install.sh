@@ -11,7 +11,7 @@ configure_dots() {
     cd yay || exit
     makepkg -si --noconfirm || exit
     cd .. && rm -rf yay || exit
-    yay -S neofetch btop skippy-xd cava ranger mpv rofi wezterm zsh feh github-cli xorg-xrandr neovim flameshot notify-osd discord chromium xclip pavucontrol ttf-roboto-mono-nerd thunar lxappearance fzf networkmanager exa bat github-cli zsh-autosuggestions zsh-syntax-highlighting meson ninja uthash libconfig nodejs npm python-pip libsixel chafa imagemagick qt5-quickcontrols2-git qt5-graphicaleffects-git qt5-svg --noconfirm || exit
+    yay -S ttf-iosevka-nerd ttf-jetbrains-mono-nerd neofetch btop skippy-xd cava ranger mpv rofi wezterm zsh feh github-cli xorg-xrandr neovim flameshot notify-osd discord chromium xclip pavucontrol ttf-roboto-mono-nerd thunar lxappearance fzf networkmanager exa bat github-cli zsh-autosuggestions zsh-syntax-highlighting meson ninja uthash libconfig nodejs npm python-pip libsixel chafa imagemagick qt5-quickcontrols2-git qt5-graphicaleffects-git qt5-svg --noconfirm || exit
 
     if [ -e /etc/systemd/system/display-manager.service ]; then 
       default_target=$(basename $(readlink -f /etc/systemd/system/display-manager.service))
