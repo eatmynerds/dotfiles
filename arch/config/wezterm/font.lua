@@ -1,7 +1,5 @@
 local wezterm = require("wezterm")
 
-
-
 local font_size = 18
 local font_family = ({
   "Liga SFMono Nerd Font",    -- [1]
@@ -16,8 +14,12 @@ local font_family = ({
   "NotoSansMono Nerd Font",   -- [10]
   "FantasqueSansM Nerd Font", -- [11]
   "JetBrains Mono",           -- [12]
-})[12]
+})[3]
 
-local font = wezterm.font(font_family)
+-- Specify the font weight here (e.g., "Regular", "Bold", or numeric values like 400, 700)
+local font_weight = "Bold"
+
+-- Set font with weight
+local font = wezterm.font(font_family, { weight = font_weight })
 
 return { font = font, font_size = font_size }
