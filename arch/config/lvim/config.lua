@@ -75,8 +75,6 @@ lvim.plugins = {
       require("presence").setup()
     end,
   }
-
-
 }
 
 lvim.colorscheme = "gruber-darker"
