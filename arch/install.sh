@@ -42,8 +42,9 @@ configure_dots() {
     cd dotfiles/arch
 
     chsh $USER -s /bin/zsh
-    
-    if [ -e $HOME/.bash* ]; then 
+
+        
+    if compgen -G "$HOME/.bash*" > /dev/null; then
       rm $HOME/.bash*
     fi
 
